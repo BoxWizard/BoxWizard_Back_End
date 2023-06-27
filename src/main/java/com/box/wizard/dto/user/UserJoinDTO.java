@@ -13,7 +13,7 @@ public class UserJoinDTO {
 
     private String walletAddress;
 
-    private String Address;
+    private String userAddress;
 
     public String getUserID() {
         return userID;
@@ -55,11 +55,11 @@ public class UserJoinDTO {
         this.walletAddress = walletAddress;
     }
 
-    public String getAddress() {
-        return Address;
+    public String getUserAddress() {
+        return userAddress;
     }
 
-    public void setAddress(String address) {
-        Address = address;
+    public void setUserAddress(String userAddress) {
+        this.userAddress = userAddress;
     }
 }

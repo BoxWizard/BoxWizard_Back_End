@@ -31,6 +31,6 @@ public class User {
     @Column(name = "walletaddress",nullable = false, unique = true)
     private String walletAddress;
 
-    @Column(name = "address",nullable = false)
-    private String Address;
+    @Column(name = "useraddress",nullable = false)
+    private String userAddress;
 }

@@ -17,8 +17,8 @@ public class Order extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long ID;
+    @Column(name = "orderindex")
+    private Long orderIndex;
 
     @Column(name = "orderid",nullable = false, unique = true)
     private String orderID;
