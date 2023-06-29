@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -28,15 +30,19 @@ public class UserServiceImpl implements UserService{
                 .userAddress(userJoinDTO.getUserAddress())
                 .build();
 
-        System.out.println("유저임 : "+user.getUserID());
-        System.out.println("유저임 : "+user.getUserPW());
-        System.out.println("유저임 : "+user.getUserName());
-        System.out.println("유저임 : "+user.getTelNumber());
-        System.out.println("유저임 : "+user.getWalletAddress());
-        System.out.println("유저임 : "+user.getUserAddress());
-
         userRepository.save(user);
 
         return true;
+    }
+
+    @Override
+    public boolean IdCheck(String userID) {
+
+
+        if(userRepository.existsByUserID(userID)) {
+            return true;
+        }
+
+        return false;
     }
 }

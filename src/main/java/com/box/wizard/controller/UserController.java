@@ -30,6 +30,18 @@ public class UserController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
+    @GetMapping("/idcheck")
+    public ResponseEntity<String> getIdCheck(@RequestBody String userID) {
+
+        boolean result = userService.IdCheck(userID);
+
+        if(result) {
+            return ResponseEntity.badRequest().body("사용중인 아이디입니다.");
+        }
+
+        return ResponseEntity.ok("사용 가능한 아이디입니다.");
+    }
+
 //    @GetMapping("/login")
 //    public ResponseEntity<String> Login (@RequestBody UserLoginDTO userLoginDTO) {
 //
